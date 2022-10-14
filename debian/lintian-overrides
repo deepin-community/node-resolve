@@ -1,0 +1,3 @@
+# this is not the file from libjs-async
+embedded-javascript-library usr/share/nodejs/resolve/lib/async.js please use libjs-async
+embedded-javascript-library usr/share/doc/node-resolve/examples/async.js please use libjs-async

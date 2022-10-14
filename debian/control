@@ -1,0 +1,31 @@
+Source: node-resolve
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Thorsten Alteholz <debian@alteholz.de>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , node-tap <!nocheck>
+ , node-tape <!nocheck>
+ , node-semver <!nocheck>
+ , node-assert <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-resolve
+Vcs-Git: https://salsa.debian.org/js-team/node-resolve.git
+Homepage: https://github.com/substack/node-resolve#readme
+Rules-Requires-Root: no
+
+Package: node-resolve
+Architecture: all
+Depends: ${misc:Depends}
+ , node-has
+Provides: ${nodejs:Provides}
+Breaks: node-browser-resolve (<< 2.0.0~)
+Multi-Arch: foreign
+Description: Synchronous/Asynchronous require.resolve() algorithm
+ This module implements the node require.resolve() algorithm such
+ that you can require.resolve() on behalf of a file asynchronously
+ and synchronously
+ .
+ Node.js is an event-based server-side JavaScript engine.

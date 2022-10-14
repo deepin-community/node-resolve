@@ -1,0 +1,67 @@
+#!/usr/bin/make -f
+
+MAIN_PACKAGE=node-resolve
+MODULES=is-core-module object-keys path-parse types-resolve
+
+%:
+	dh $@
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod -x debian/${MAIN_PACKAGE}/usr/share/nodejs/@types/resolve/*
+
+override_dh_installdocs:
+	dh_installdocs
+	# copyright
+	set -e; \
+	for module in $(MODULES); do \
+		mkdir -p "debian/${MAIN_PACKAGE}/usr/share/doc/node-$$module"; \
+		ln -s "../${MAIN_PACKAGE}/copyright" "debian/${MAIN_PACKAGE}/usr/share/doc/node-$$module/copyright" ; \
+	done
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS) $(DEB_BUILD_PROFILES)))
+	# install doc in subdir and link subdir to pseudo package
+	set -e; \
+	for module in $(MODULES); do \
+		mkdir -p "debian/$(MAIN_PACKAGE)/usr/share/doc/node-$$module"; \
+		find "$$module" -maxdepth 1  \( -iname '*.md' -or -iname '*.markdown' \) -and -not -iname 'license.*' -exec install {} "debian/$(MAIN_PACKAGE)/usr/share/doc/node-$$module" \; ; \
+	done
+	# install backlink
+	for module in $(MODULES); do \
+		ln -s "../node-$$module" "debian/${MAIN_PACKAGE}/usr/share/doc/${MAIN_PACKAGE}/node-$$module";\
+	done;
+	# install direct link
+	for module in $(MODULES); do \
+		ln -s "../${MAIN_PACKAGE}" "debian/${MAIN_PACKAGE}/usr/share/doc/${MAIN_PACKAGE}/node-$$module/${MAIN_PACKAGE}";\
+	done;
+else
+	@echo '**********************************************************'
+	@echo 'Skip dh_installdocs                                       '
+	@echo '**********************************************************'
+endif
+
+test_component_packages:
+	test ! -d node_modules || mkdir -p node_modules
+	test ! -f node_modules/object-keys || ln -s ../object-keys node_modules/object-keys
+	cd is-core-module && tap -R spec test
+	# not yet node-is not packaged
+	#cd object-keys && tap -R spec test
+	cd path-parse && tap -R spec test.js
+
+override_dh_auto_test: test_component_packages
+	dh_auto_test
+
+
+override_dh_installchangelogs:
+	# create changelog
+	set -e; \
+	for module in $(MODULES); do \
+		mkdir -p "debian/$(MAIN_PACKAGE)/usr/share/doc/node-$$module"; \
+		ln -s "../$(MAIN_PACKAGE)/changelog.Debian.gz" "debian/$(MAIN_PACKAGE)/usr/share/doc/node-$$module/changelog.Debian.gz" ; \
+	done;
+	dh_installchangelogs
+
+override_dh_auto_clean:
+	rm -rf node_modules
+	dh_auto_clean
+
+.PHONY=test_component_packages
