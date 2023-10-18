@@ -40,12 +40,13 @@ else
 endif
 
 test_component_packages:
+	pkgjs-utils link_test_modules || true
 	test ! -d node_modules || mkdir -p node_modules
 	test ! -f node_modules/object-keys || ln -s ../object-keys node_modules/object-keys
-	cd is-core-module && tap -R spec test
+	cd is-core-module && tap -R spec --no-cov test
 	# not yet node-is not packaged
 	#cd object-keys && tap -R spec test
-	cd path-parse && tap -R spec test.js
+	cd path-parse && tap -R spec --no-cov test.js
 
 override_dh_auto_test: test_component_packages
 	dh_auto_test

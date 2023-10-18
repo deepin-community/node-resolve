@@ -1,18 +1,17 @@
-Install core.json
-
-core.json should be installed
-
+Description: Install core.json
+ core.json should be installed
 Forwarded: https://github.com/inspect-js/is-core-module/issues/9
 bug: https://github.com/inspect-js/is-core-module/issues/9
-Index: node-resolve/is-core-module/package.json
-===================================================================
---- node-resolve.orig/is-core-module/package.json
-+++ node-resolve/is-core-module/package.json
+Reviewed-By: Yadd <yadd@debian.org>
+Last-Update: 2022-04-15
+
+--- a/is-core-module/package.json
++++ b/is-core-module/package.json
 @@ -3,6 +3,7 @@
- 	"version": "2.6.0",
+ 	"version": "2.10.0",
  	"description": "Is this specifier a node.js core module?",
  	"main": "index.js",
 +        "files" : ["./core.json" , "./index.js"],
+ 	"sideEffects": false,
  	"exports": {
- 		".": [
- 			{
+ 		".": "./index.js",
