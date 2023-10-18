@@ -5,12 +5,12 @@ Section: javascript
 Testsuite: autopkgtest-pkg-nodejs
 Priority: optional
 Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-assert <!nocheck>
+ , node-semver <!nocheck>
  , node-tap <!nocheck>
  , node-tape <!nocheck>
- , node-semver <!nocheck>
- , node-assert <!nocheck>
- , dh-sequence-nodejs
-Standards-Version: 4.6.0
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/js-team/node-resolve
 Vcs-Git: https://salsa.debian.org/js-team/node-resolve.git
 Homepage: https://github.com/substack/node-resolve#readme

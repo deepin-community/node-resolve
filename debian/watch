@@ -3,7 +3,7 @@ opts=\
   dversionmangle=s/@DEB_EXT@//,\
   uversionmangle=s/-next(\.?\d+)*/~next$1/,\
   filenamemangle=s%(?:.*?/)?v?@ANY_VERSION@(@ARCHIVE_EXT@)$%node-resolve-$1$2% \
-  https://github.com/substack/node-resolve/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@$ group
+  https://github.com/substack/node-resolve/tags (?:.*?/)?v?(\d[\d\.]*)@ARCHIVE_EXT@$ group
 
 opts=\
   component=object-keys,\

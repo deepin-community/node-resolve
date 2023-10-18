@@ -1,3 +1,30 @@
+node-resolve (1.22.1+~cs5.31.10-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.6.1
+  * Only stable versions
+  * New upstream version 1.22.1+~cs5.31.10
+  * Refresh patches
+  * Update test
+
+ -- Yadd <yadd@debian.org>  Mon, 29 Aug 2022 16:39:41 +0200
+
+node-resolve (1.22.0+~cs5.29.10-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix autopkgtest
+
+ -- Yadd <yadd@debian.org>  Fri, 15 Apr 2022 08:47:36 +0200
+
+node-resolve (1.22.0+~cs5.29.10-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.22.0+~cs5.29.10 (fixes test for nodejs 14)
+  * Refresh patches
+  * Fix components test for tap >= 15 (--no-cov) (Closes: #1009549)
+
+ -- Yadd <yadd@debian.org>  Fri, 15 Apr 2022 07:36:00 +0200
+
 node-resolve (1.20.0+~cs5.27.9-1) unstable; urgency=medium
 
   * Team upload
