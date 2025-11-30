@@ -1,3 +1,21 @@
+node-resolve (1.22.8+~cs5.34.15-2) unstable; urgency=medium
+
+  * Team upload
+  * Build a bundle of is-core-module to avoid dependending on big packages
+
+ -- Yadd <yadd@debian.org>  Wed, 13 Dec 2023 19:17:44 +0400
+
+node-resolve (1.22.8+~cs5.34.15-1) unstable; urgency=medium
+
+  * Team upload
+  * Set upstream metadata fields: Bug-Database, Bug-Submit,
+    Repository-Browse, Security-Contact
+  * Update standards version to 4.6.2, no changes needed
+  * New upstream version 1.22.8+~cs5.34.15 (Closes: #1058525)
+  * Unfuzz patches
+
+ -- Yadd <yadd@debian.org>  Wed, 13 Dec 2023 13:46:28 +0400
+
 node-resolve (1.22.1+~cs5.31.10-1) unstable; urgency=medium
 
   * Team upload

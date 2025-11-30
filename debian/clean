@@ -1,2 +1,4 @@
+is-core-module/index.cjs
+is-core-module/index.cjs.map
 test/resolver/symlinked/_/node_modules/package
 test/resolver/symlinked/symlink

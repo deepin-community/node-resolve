@@ -1,6 +1,7 @@
 ---
 Archive: GitHub
-Bug-Database: https://github.com/substack/node-resolve/issues
+Bug-Database: https://github.com/browserify/resolve/issues
 Repository: https://github.com/substack/node-resolve.git
-Repository-Browse: https://github.com/substack/node-resolve
-Bug-Submit: https://github.com/substack/node-resolve/issues/new
+Repository-Browse: https://github.com/browserify/resolve
+Bug-Submit: https://github.com/browserify/resolve/issues/new
+Security-Contact: https://github.com/substack/node-resolve/tree/HEAD/SECURITY.md

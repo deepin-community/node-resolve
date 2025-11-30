@@ -8,7 +8,7 @@ Last-Update: 2022-04-15
 --- a/is-core-module/package.json
 +++ b/is-core-module/package.json
 @@ -3,6 +3,7 @@
- 	"version": "2.10.0",
+ 	"version": "2.13.1",
  	"description": "Is this specifier a node.js core module?",
  	"main": "index.js",
 +        "files" : ["./core.json" , "./index.js"],

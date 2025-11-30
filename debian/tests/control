@@ -1,3 +1,4 @@
 Test-Command: make -f debian/rules test_component_packages
 Depends: @, @builddeps@
 Restrictions: allow-stderr
+Features: test-name=components-test

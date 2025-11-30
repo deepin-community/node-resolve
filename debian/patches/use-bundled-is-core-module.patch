@@ -1,0 +1,23 @@
+Description: to avoid having to many dependency, is-core-module is a bundle
+ This package asembles very little components embedded in big modules
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2023-12-13
+
+--- a/is-core-module/package.json
++++ b/is-core-module/package.json
+@@ -2,11 +2,11 @@
+ 	"name": "is-core-module",
+ 	"version": "2.13.1",
+ 	"description": "Is this specifier a node.js core module?",
+-	"main": "index.js",
+-        "files" : ["./core.json" , "./index.js"],
++	"main": "index.cjs",
++        "files" : ["./index.cjs"],
+ 	"sideEffects": false,
+ 	"exports": {
+-		".": "./index.js",
++		".": "./index.cjs",
+ 		"./package.json": "./package.json"
+ 	},
+ 	"scripts": {
